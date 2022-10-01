@@ -1,59 +1,11 @@
 .container {
-    width: 400px;
-    height: 100px;
     transform-style: preserve-3d;
-    perspective: 8000px;
-    perspective-origin: center;
-}
+    perspective: 80000px;
+    perspective-origin: left;
+    transform: center;
+} 
 
-.container:hover {
-    transition: 9s transform linear;
-    transform-origin: center;
-    transform: rotateX(720deg) rotateY(720deg) rotateZ(720deg);
-}
-
-.one {
-    background-color: peachpuff;
-    position: absolute;
-    height: 100px;
-    width: 400px;
-    border: solid 2px black;
-    transform: translateZ(70px);
-}
-.two {
-    background-color: aquamarine;
-    position: absolute;
-    height: 100px;
-    width: 400px;
-    border: solid 2px black;
-    transform: rotateX(-72deg) translateZ(70px);
-}
-.three {
-    background-color: orange;
-    position: absolute;
-    height: 100px;
-    width: 400px;
-    border: solid 2px black;
-    transform: rotateX(-144deg) translateZ(70px);
-}
-.four {
-    background-color: hotpink;
-    position: absolute;
-    height: 100px;
-    width: 400px;
-    border: solid 2px black;
-    transform: rotateX(-216deg) translateZ(70px);
-}
-.five {
-    background-color: rgb(128, 128, 211);
-    position: absolute;
-    height: 100px;
-    width: 400px;
-    border: solid 2px black;
-    transform: rotateX(-288deg) translateZ(70px);
-}
-
-.yeet {
+.center {
     width: 100%;
     height: 100%;
     display: flex;
