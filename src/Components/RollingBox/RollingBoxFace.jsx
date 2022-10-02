@@ -5,8 +5,8 @@ import {
     setTranslationCss
 } from "../../Utilities/cssHelpers.js";
 
-export function RollingBoxFace({title, height, width, inraduis, degreesOfSeperation, side}) {
-    const angle = degreesOfSeperation * (side + 1)
+export function RollingBoxFace({child, height, width, inraduis, degreesOfSeperation, side}) {
+    const angle = degreesOfSeperation * (side + 1);
 
     const style = {
         position: "absolute",
@@ -19,7 +19,7 @@ export function RollingBoxFace({title, height, width, inraduis, degreesOfSeperat
     return (
         <div style={style}>
             <div className="center">
-                {title}
+                {child}
             </div>
         </div>
     )

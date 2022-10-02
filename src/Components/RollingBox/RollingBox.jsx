@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useInterval } from 'usehooks-ts'
+import { RollingBoxFace } from "./RollingBoxFace.jsx"
 import {getInraduis, getDegreeSeperation} from "../../Utilities/geometrics.js";
 import { 
     setHeightCss,
@@ -6,11 +8,10 @@ import {
     setTransitionCss,
     setRotateCss,
 } from "../../Utilities/cssHelpers.js";
-import { RollingBoxFace } from "./RollingBoxFace.jsx"
 import "./RollingBox.scss";
 
-export function RollingBox({height, width, rotationDuration, content}) {
-    const [angle, setAngle] = useState(0)
+export function RollingBox({height, width, rotationDuration, automatedRollingInterval = null, content}) {
+    const [angle, setAngle] = useState(0);
 
     const numberOfSides = content.length;
     const inraduis = getInraduis(height, numberOfSides);
@@ -27,13 +28,15 @@ export function RollingBox({height, width, rotationDuration, content}) {
         transform: setRotateCss(angle),
     }
     
+    useInterval(() => { rollBox() }, automatedRollingInterval);
+
     return (
         <div onClick={rollBox}>
             <div style={rollingBoxStyle} className="container">
-                {content.map((val, index) => (
+                {content.map((child, index) => (
                     <RollingBoxFace
                         key={index}
-                        title={val}
+                        child={child}
                         height={height}
                         width={width}
                         inraduis={inraduis}
