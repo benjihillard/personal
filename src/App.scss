@@ -3,9 +3,10 @@
     width: 100vw;
     padding: 0;
     margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    //display: flex;
+    //align-items: center;
+    //justify-content: center;
+    //background-color: antiquewhite;
 }
 
 .center {
@@ -14,6 +15,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.futura {
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
 }
 
 .bold-border {

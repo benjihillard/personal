@@ -10,7 +10,7 @@ import {
 } from "../../Utilities/cssHelpers.js";
 import "./RollingBox.scss";
 
-export function RollingBox({height, width, rotationDuration, automatedRollingInterval = null, content}) {
+export function RollingBox({height, width, sizeUnit = "px", rotationDuration, automatedRollingInterval = null, content}) {
     const [angle, setAngle] = useState(0);
 
     const numberOfSides = content.length;
@@ -22,12 +22,12 @@ export function RollingBox({height, width, rotationDuration, automatedRollingInt
     }
 
     const rollingBoxStyle = {
-        width: setWidthCss(width),
-        height: setHeightCss(height),
+        width: setWidthCss(width, sizeUnit),
+        height: setHeightCss(height, sizeUnit),
         transition: setTransitionCss(rotationDuration),
         transform: setRotateCss(angle),
     }
-    
+
     useInterval(() => { rollBox() }, automatedRollingInterval);
 
     return (
@@ -39,6 +39,7 @@ export function RollingBox({height, width, rotationDuration, automatedRollingInt
                         child={child}
                         height={height}
                         width={width}
+                        sizeUnit={sizeUnit}
                         inraduis={inraduis}
                         degreesOfSeperation={degreesOfSeperation}
                         side={index}
